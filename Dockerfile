@@ -6,7 +6,7 @@ FROM tomcat:9.0
 RUN rm -rf /usr/local/tomcat/webapps
 
 # Copy the WAR file to the webapps directory
-COPY target/mvc.war /usr/local/tomcat/webapps/ROOT.war
+COPY target/spring-mvc.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port 8080
 EXPOSE 8080

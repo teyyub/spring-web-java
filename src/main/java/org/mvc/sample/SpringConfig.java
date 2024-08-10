@@ -14,18 +14,17 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = "org.mvc.sample")
 public class SpringConfig extends WebMvcConfigurerAdapter {
 
- @Bean
- public ViewResolver viewResolver() {
- InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-  viewResolver.setViewClass(JstlView.class);
-  viewResolver.setPrefix("/WEB-INF/pages/");
- viewResolver.setSuffix(".jsp");
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setPrefix("/WEB-INF/pages/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
 
- return viewResolver;
- }
-
-@Override
- public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-  configurer.enable();
-  }
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
 }

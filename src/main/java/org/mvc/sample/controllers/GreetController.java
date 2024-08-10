@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class GreetController {
-    @RequestMapping(path= "/greet/{name}",method= RequestMethod.GET)
-    public String greet(@PathVariable String name, ModelMap model){
-     String greet =" Hello !!!" + name + " How are You?";
-    model.addAttribute("greet", greet);
- System.out.println(greet);
+    @RequestMapping(path = "/greet/{name}", method = RequestMethod.GET)
+    public String greet(@PathVariable String name, ModelMap model) {
+        String greet = " Hello !!!" + name + " How are You?";
+        model.addAttribute("greet", greet);
+        System.out.println(greet);
+        return "index";
+    }
 
-        return "greet";
+    @RequestMapping("/test")
+    public String test() {
+        System.out.println("called");
+        return "index";
     }
 }
